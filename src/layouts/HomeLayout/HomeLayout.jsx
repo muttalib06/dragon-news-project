@@ -2,6 +2,9 @@ import React from "react";
 import Header from "../../Components/Header/Header";
 import Marquee from "react-fast-marquee";
 import Navbar from "../../Components/Navbar/Navbar";
+import LeftSide from "../../Components/homeLayouts/LeftSide";
+import { Outlet } from "react-router";
+import RightSide from "../../Components/homeLayouts/RightSide";
 
 const HomeLayout = () => {
   return (
@@ -30,7 +33,17 @@ const HomeLayout = () => {
         </div>
         <Navbar></Navbar>
       </header>
-      <main></main>
+      <main className="max-w-[80%] mx-auto mt-8 grid grid-cols-12">
+        <section className="col-span-3">
+          <LeftSide></LeftSide>
+        </section>
+        <section className="col-span-6">
+          <Outlet></Outlet>
+        </section>
+        <section className="col-span-3">
+          <RightSide></RightSide>
+        </section>
+      </main>
     </>
   );
 };

@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
       <div className="flex gap-3">
         <img className="rounded-full" src={user} alt="" />
-        <button className="bg-black text-white px-2 py-1 rounded">Login</button>
+        <button className="bg-black text-white px-3 py-1 rounded">Login</button>
       </div>
     </div>
   );
