@@ -33,7 +33,7 @@ const HomeLayout = () => {
         </div>
         <Navbar></Navbar>
       </header>
-      <main className="max-w-[80%] mx-auto mt-8 grid grid-cols-12">
+      <main className="max-w-[80%] mx-auto mt-8 grid grid-cols-12 gap-5">
         <section className="col-span-3">
           <LeftSide></LeftSide>
         </section>
