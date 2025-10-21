@@ -1,14 +1,9 @@
 import { FaRegBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
+import { NavLink } from "react-router";
 
 const News = ({ news }) => {
-  const {
-    title,
-    author,
-    thumbnail_url,
-    details,
-    rating,
-    total_view,
-  } = news;
+  const { id, title, author, thumbnail_url, details, rating, total_view } =
+    news;
 
   return (
     <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
@@ -50,9 +45,12 @@ const News = ({ news }) => {
       {/* Details */}
       <div className="px-5 py-4 text-gray-700 text-sm leading-relaxed">
         {details.slice(0, 180)}...
-        <span className="text-orange-500 font-semibold cursor-pointer hover:underline ml-1">
+        <NavLink
+          to={`/newsDetail/${id}`}
+          className="text-orange-500 font-semibold cursor-pointer hover:underline ml-1"
+        >
           Read More
-        </span>
+        </NavLink>
       </div>
 
       {/* Footer */}
