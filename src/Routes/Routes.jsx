@@ -9,6 +9,7 @@ import Auth from "../layouts/Auth";
 import Register from "../pages/Authentication/Register";
 import Login from "../pages/Authentication/Login";
 import NewsDetail from "../pages/newsDetail/NewsDetail";
+import PrivateRoute from "../provider/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -47,7 +48,11 @@ export const router = createBrowserRouter([
       }
       return response;
     },
-    element:<NewsDetail></NewsDetail>
+    element: (
+      <PrivateRoute>
+        <NewsDetail></NewsDetail>
+      </PrivateRoute>
+    ),
   },
   { path: "about", element: <About></About> },
   { path: "career", element: <Career></Career> },
